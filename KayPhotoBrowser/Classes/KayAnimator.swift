@@ -1,18 +1,18 @@
 //
-//  StnAnimator.swift
-//  StnPhotoBrowser
+//  KayAnimator.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
 
-@objc public protocol StnPhotoBrowserAnimatorDelegate {
-    func willPresent(_ browser: StnPhotoBrowser)
-    func willDismiss(_ browser: StnPhotoBrowser)
+@objc public protocol KayPhotoBrowserAnimatorDelegate {
+    func willPresent(_ browser: KayPhotoBrowser)
+    func willDismiss(_ browser: KayPhotoBrowser)
 }
 
-class StnAnimator: NSObject, StnPhotoBrowserAnimatorDelegate {
+class KayAnimator: NSObject, KayPhotoBrowserAnimatorDelegate {
     var resizableImageView: UIImageView?
     
     var senderOriginImage: UIImage!
@@ -23,19 +23,19 @@ class StnAnimator: NSObject, StnPhotoBrowserAnimatorDelegate {
     
     var bounceAnimation: Bool = false
     var animationDuration: TimeInterval {
-        if StnPhotoBrowserOptions.bounceAnimation {
+        if KayPhotoBrowserOptions.bounceAnimation {
             return 0.5
         }
         return 0.35
     }
     var animationDamping: CGFloat {
-        if StnPhotoBrowserOptions.bounceAnimation {
+        if KayPhotoBrowserOptions.bounceAnimation {
             return 0.8
         }
         return 1
     }
     
-    func willPresent(_ browser: StnPhotoBrowser) {
+    func willPresent(_ browser: KayPhotoBrowser) {
         guard let appWindow = UIApplication.shared.delegate?.window else {
             return
         }
@@ -68,7 +68,7 @@ class StnAnimator: NSObject, StnPhotoBrowserAnimatorDelegate {
         presentAnimation(browser)
     }
     
-    func willDismiss(_ browser: StnPhotoBrowser) {
+    func willDismiss(_ browser: KayPhotoBrowser) {
         guard let sender = browser.delegate?.viewForPhoto?(browser, index: browser.currentPageIndex),
             let image = browser.photoAtIndex(browser.currentPageIndex).underlyingImage,
             let scrollView = browser.pageDisplayedAtIndex(browser.currentPageIndex) else {
@@ -111,7 +111,7 @@ class StnAnimator: NSObject, StnPhotoBrowserAnimatorDelegate {
     }
 }
 
-private extension StnAnimator {
+private extension KayAnimator {
     func calcOriginFrame(_ sender: UIView) -> CGRect {
         if let senderViewOriginalFrameTemp = sender.superview?.convert(sender.frame, to:nil) {
             return senderViewOriginalFrameTemp
@@ -123,22 +123,22 @@ private extension StnAnimator {
     }
     
     func calcFinalFrame(_ imageRatio: CGFloat) -> CGRect {
-        if StnMesurement.screenRatio < imageRatio {
-            let width = StnMesurement.screenWidth
+        if KayMesurement.screenRatio < imageRatio {
+            let width = KayMesurement.screenWidth
             let height = width / imageRatio
-            let yOffset = (StnMesurement.screenHeight - height) / 2
+            let yOffset = (KayMesurement.screenHeight - height) / 2
             return CGRect(x: 0, y: yOffset, width: width, height: height)
         } else {
-            let height = StnMesurement.screenHeight
+            let height = KayMesurement.screenHeight
             let width = height * imageRatio
-            let xOffset = (StnMesurement.screenWidth - width) / 2
+            let xOffset = (KayMesurement.screenWidth - width) / 2
             return CGRect(x: xOffset, y: 0, width: width, height: height)
         }
     }
 }
 
-private extension StnAnimator {
-    func presentAnimation(_ browser: StnPhotoBrowser, completion: ((Void) -> Void)? = nil) {
+private extension KayAnimator {
+    func presentAnimation(_ browser: KayPhotoBrowser, completion: ((Void) -> Void)? = nil) {
         browser.view.isHidden = true
         browser.view.alpha = 0.0
         
@@ -163,7 +163,7 @@ private extension StnAnimator {
             })
     }
     
-    func dismissAnimation(_ browser: StnPhotoBrowser, completion: ((Void) -> Void)? = nil) {
+    func dismissAnimation(_ browser: KayPhotoBrowser, completion: ((Void) -> Void)? = nil) {
         UIView.animate(
             withDuration: animationDuration,
             delay:0,

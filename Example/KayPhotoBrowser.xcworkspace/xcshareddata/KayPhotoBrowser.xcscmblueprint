@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "54FE21FC7EC66938180463ED9AAFFC131714F443",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "54FE21FC7EC66938180463ED9AAFFC131714F443" : 9223372036854775807,
+    "BDE48A4CB2284A360B81CACBF36E87EB347AD781" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3ADF00C3-665E-4EA9-89AE-DA02A94006F8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "54FE21FC7EC66938180463ED9AAFFC131714F443" : "KayPhotoBrowser\/",
+    "BDE48A4CB2284A360B81CACBF36E87EB347AD781" : "StnPhotoBrowser\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KayPhotoBrowser",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/KayPhotoBrowser.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KAYOSYSAPPS\/KayPhotoBrowser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "54FE21FC7EC66938180463ED9AAFFC131714F443"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KAYOSYSAPPS\/StnPhotoBrowser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BDE48A4CB2284A360B81CACBF36E87EB347AD781"
+    }
+  ]
+}

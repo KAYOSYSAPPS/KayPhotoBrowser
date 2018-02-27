@@ -1,14 +1,14 @@
 //
-//  StnZoomingScrollView.swift
-//  StnViewExample
+//  KayZoomingScrollView.swift
+//  KayViewExample
 //
 //
 
 import UIKit
 
-open class StnZoomingScrollView: UIScrollView {
-    var captionView: StnCaptionView!
-    var photo: StnPhotoProtocol! {
+open class KayZoomingScrollView: UIScrollView {
+    var captionView: KayCaptionView!
+    var photo: KayPhotoProtocol! {
         didSet {
             photoImageView.image = nil
             if photo != nil {
@@ -17,10 +17,10 @@ open class StnZoomingScrollView: UIScrollView {
         }
     }
     
-    fileprivate(set) var photoImageView: StnDetectingImageView!
-    fileprivate weak var photoBrowser: StnPhotoBrowser?
-    fileprivate var tapView: StnDetectingView!
-    fileprivate var indicatorView: StnIndicatorView!
+    fileprivate(set) var photoImageView: KayDetectingImageView!
+    fileprivate weak var photoBrowser: KayPhotoBrowser?
+    fileprivate var tapView: KayDetectingView!
+    fileprivate var indicatorView: KayIndicatorView!
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,7 +32,7 @@ open class StnZoomingScrollView: UIScrollView {
         setup()
     }
     
-    convenience init(frame: CGRect, browser: StnPhotoBrowser) {
+    convenience init(frame: CGRect, browser: KayPhotoBrowser) {
         self.init(frame: frame)
         photoBrowser = browser
         setup()
@@ -44,21 +44,21 @@ open class StnZoomingScrollView: UIScrollView {
     
     func setup() {
         // tap
-        tapView = StnDetectingView(frame: bounds)
+        tapView = KayDetectingView(frame: bounds)
         tapView.delegate = self
         tapView.backgroundColor = UIColor.clear
         tapView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(tapView)
         
         // image
-        photoImageView = StnDetectingImageView(frame: frame)
+        photoImageView = KayDetectingImageView(frame: frame)
         photoImageView.delegate = self
         photoImageView.contentMode = .bottom
         photoImageView.backgroundColor = UIColor.clear
         addSubview(photoImageView)
         
         // indicator
-        indicatorView = StnIndicatorView(frame: frame)
+        indicatorView = KayIndicatorView(frame: frame)
         addSubview(indicatorView)
         
         // self
@@ -184,8 +184,8 @@ open class StnZoomingScrollView: UIScrollView {
             // performance slowed #145
  
             // create padding
-            // let width: CGFloat = image.size.width + StnPhotoBrowserOptions.imagePaddingX
-            // let height: CGFloat = image.size.height + StnPhotoBrowserOptions.imagePaddingY;
+            // let width: CGFloat = image.size.width + KayPhotoBrowserOptions.imagePaddingX
+            // let height: CGFloat = image.size.height + KayPhotoBrowserOptions.imagePaddingY;
             // UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), false, 0.0);
             // let context: CGContextRef = UIGraphicsGetCurrentContext()!;
             // UIGraphicsPushContext(context);
@@ -198,7 +198,7 @@ open class StnZoomingScrollView: UIScrollView {
             // image
             photoImageView.image = image
             photoImageView.contentMode = photo.contentMode
-            photoImageView.backgroundColor = StnPhotoBrowserOptions.backgroundColor
+            photoImageView.backgroundColor = KayPhotoBrowserOptions.backgroundColor
             
             var photoImageViewFrame = CGRect.zero
             photoImageViewFrame.origin = CGPoint.zero
@@ -245,7 +245,7 @@ open class StnZoomingScrollView: UIScrollView {
 
 // MARK: - UIScrollViewDelegate
 
-extension StnZoomingScrollView: UIScrollViewDelegate {
+extension KayZoomingScrollView: UIScrollViewDelegate {
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return photoImageView
     }
@@ -260,18 +260,18 @@ extension StnZoomingScrollView: UIScrollViewDelegate {
     }
 }
 
-// MARK: - StnDetectingImageViewDelegate
+// MARK: - KayDetectingImageViewDelegate
 
-extension StnZoomingScrollView: StnDetectingViewDelegate {
+extension KayZoomingScrollView: KayDetectingViewDelegate {
     func handleSingleTap(_ view: UIView, touch: UITouch) {
         guard let browser = photoBrowser else {
             return
         }
-        guard StnPhotoBrowserOptions.enableZoomBlackArea == true else {
+        guard KayPhotoBrowserOptions.enableZoomBlackArea == true else {
             return
         }
         
-        if browser.areControlsHidden() == false && StnPhotoBrowserOptions.enableSingleTapDismiss == true {
+        if browser.areControlsHidden() == false && KayPhotoBrowserOptions.enableSingleTapDismiss == true {
             browser.determineAndClose()
         } else {
             browser.toggleControls()
@@ -279,7 +279,7 @@ extension StnZoomingScrollView: StnDetectingViewDelegate {
     }
     
     func handleDoubleTap(_ view: UIView, touch: UITouch) {
-        if StnPhotoBrowserOptions.enableZoomBlackArea == true {
+        if KayPhotoBrowserOptions.enableZoomBlackArea == true {
             let needPoint = getViewFramePercent(view, touch: touch)
             handleDoubleTap(needPoint)
         }
@@ -287,14 +287,14 @@ extension StnZoomingScrollView: StnDetectingViewDelegate {
 }
 
 
-// MARK: - StnDetectingImageViewDelegate
+// MARK: - KayDetectingImageViewDelegate
 
-extension StnZoomingScrollView: StnDetectingImageViewDelegate {
+extension KayZoomingScrollView: KayDetectingImageViewDelegate {
     func handleImageViewSingleTap(_ touchPoint: CGPoint) {
         guard let browser = photoBrowser else {
             return
         }
-        if StnPhotoBrowserOptions.enableSingleTapDismiss {
+        if KayPhotoBrowserOptions.enableSingleTapDismiss {
             browser.determineAndClose()
         } else {
             browser.toggleControls()
@@ -306,7 +306,7 @@ extension StnZoomingScrollView: StnDetectingImageViewDelegate {
     }
 }
 
-private extension StnZoomingScrollView {
+private extension KayZoomingScrollView {
     func getViewFramePercent(_ view: UIView, touch: UITouch) -> CGPoint {
         let oneWidthViewPercent = view.bounds.width / 100
         let viewTouchPoint = touch.location(in: view)

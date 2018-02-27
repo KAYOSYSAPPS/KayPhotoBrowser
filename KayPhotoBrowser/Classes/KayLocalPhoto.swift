@@ -1,13 +1,13 @@
 //
-//  StnLocalPhoto.swift
-//  StnPhotoBrowser
+//  KayLocalPhoto.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
-// MARK: - StnLocalPhoto
-open class StnLocalPhoto: NSObject, StnPhotoProtocol {
+// MARK: - KayLocalPhoto
+open class KayLocalPhoto: NSObject, KayPhotoProtocol {
     
     open var underlyingImage: UIImage!
     open var photoURL: String!
@@ -54,15 +54,15 @@ open class StnLocalPhoto: NSObject, StnPhotoProtocol {
     }
     
     open func loadUnderlyingImageComplete() {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: StnPHOTO_LOADING_DID_END_NOTIFICATION), object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: KayPHOTO_LOADING_DID_END_NOTIFICATION), object: self)
     }
     
     // MARK: - class func
-    open class func photoWithImageURL(_ url: String) -> StnLocalPhoto {
-        return StnLocalPhoto(url: url)
+    open class func photoWithImageURL(_ url: String) -> KayLocalPhoto {
+        return KayLocalPhoto(url: url)
     }
     
-    open class func photoWithImageURL(_ url: String, holder: UIImage?) -> StnLocalPhoto {
-        return StnLocalPhoto(url: url, holder: holder)
+    open class func photoWithImageURL(_ url: String, holder: UIImage?) -> KayLocalPhoto {
+        return KayLocalPhoto(url: url, holder: holder)
     }
 }

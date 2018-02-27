@@ -1,18 +1,18 @@
 //
-//  StnPagingScrollView.swift
-//  StnPhotoBrowser
+//  KayPagingScrollView.swift
+//  KayPhotoBrowser
 //
 //
 
 import Foundation
 
-class StnPagingScrollView: UIScrollView {
+class KayPagingScrollView: UIScrollView {
     let pageIndexTagOffset: Int = 1000
     let sideMargin: CGFloat = 10
-    fileprivate var visiblePages = [StnZoomingScrollView]()
-    fileprivate var recycledPages = [StnZoomingScrollView]()
+    fileprivate var visiblePages = [KayZoomingScrollView]()
+    fileprivate var recycledPages = [KayZoomingScrollView]()
     
-    fileprivate weak var browser: StnPhotoBrowser?
+    fileprivate weak var browser: KayPhotoBrowser?
     var numberOfPhotos: Int {
         return browser?.photos.count ?? 0
     }
@@ -30,7 +30,7 @@ class StnPagingScrollView: UIScrollView {
         showsVerticalScrollIndicator = true
     }
     
-    convenience init(frame: CGRect, browser: StnPhotoBrowser) {
+    convenience init(frame: CGRect, browser: KayPhotoBrowser) {
         self.init(frame: frame)
         self.browser = browser
         
@@ -43,7 +43,7 @@ class StnPagingScrollView: UIScrollView {
         recycledPages.removeAll()
     }
     
-    func loadAdjacentPhotosIfNecessary(_ photo: StnPhotoProtocol, currentPageIndex: Int) {
+    func loadAdjacentPhotosIfNecessary(_ photo: KayPhotoProtocol, currentPageIndex: Int) {
         guard let browser = browser, let page = pageDisplayingAtPhoto(photo) else {
             return
         }
@@ -123,8 +123,8 @@ class StnPagingScrollView: UIScrollView {
                 page.removeFromSuperview()
         }
         
-        let visibleSet: Set<StnZoomingScrollView> = Set(visiblePages)
-        let visibleSetWithoutRecycled: Set<StnZoomingScrollView> = visibleSet.subtracting(recycledPages)
+        let visibleSet: Set<KayZoomingScrollView> = Set(visiblePages)
+        let visibleSetWithoutRecycled: Set<KayZoomingScrollView> = visibleSet.subtracting(recycledPages)
         visiblePages = Array(visibleSetWithoutRecycled)
         
         while recycledPages.count > 2 {
@@ -136,7 +136,7 @@ class StnPagingScrollView: UIScrollView {
                 continue
             }
             
-            let page: StnZoomingScrollView = StnZoomingScrollView(frame: frame, browser: browser)
+            let page: KayZoomingScrollView = KayZoomingScrollView(frame: frame, browser: browser)
             page.frame = frameForPageAtIndex(index)
             page.tag = index + pageIndexTagOffset
             page.photo = browser.photos[index]
@@ -145,7 +145,7 @@ class StnPagingScrollView: UIScrollView {
             addSubview(page)
             
             // if exists caption, insert
-            if let captionView: StnCaptionView = createCaptionView(index) {
+            if let captionView: KayCaptionView = createCaptionView(index) {
                 captionView.frame = frameForCaptionView(captionView, index: index)
                 captionView.alpha = 1//browser.areControlsHidden() ? 0 : 1
                 captionView.backgroundColor = UIColor(red: 118/255, green: 164/255, blue: 22/255, alpha: 1)
@@ -156,7 +156,7 @@ class StnPagingScrollView: UIScrollView {
         }
     }
     
-    func frameForCaptionView(_ captionView: StnCaptionView, index: Int) -> CGRect {
+    func frameForCaptionView(_ captionView: KayCaptionView, index: Int) -> CGRect {
         let pageFrame = frameForPageAtIndex(index)
         //        let captionSize = captionView.sizeThatFits(CGSize(width: pageFrame.size.width, height: 0))
         //        let navHeight = browser?.navigationController?.navigationBar.frame.size.height ?? 44
@@ -165,7 +165,7 @@ class StnPagingScrollView: UIScrollView {
         return CGRect(x: pageFrame.origin.x, y: ((pageFrame.size.height) * 0.8861), width: pageFrame.size.width, height: ((pageFrame.size.height) * 0.1139))
     }
     
-    func pageDisplayedAtIndex(_ index: Int) -> StnZoomingScrollView? {
+    func pageDisplayedAtIndex(_ index: Int) -> KayZoomingScrollView? {
         for page in visiblePages {
             if page.tag - pageIndexTagOffset == index {
                 return page
@@ -174,7 +174,7 @@ class StnPagingScrollView: UIScrollView {
         return nil
     }
     
-    func pageDisplayingAtPhoto(_ photo: StnPhotoProtocol) -> StnZoomingScrollView? {
+    func pageDisplayingAtPhoto(_ photo: KayPhotoProtocol) -> KayZoomingScrollView? {
         for page in visiblePages {
             if page.photo === photo {
                 return page
@@ -183,8 +183,8 @@ class StnPagingScrollView: UIScrollView {
         return nil
     }
     
-    func getCaptionViews() -> Set<StnCaptionView> {
-        var captionViews = Set<StnCaptionView>()
+    func getCaptionViews() -> Set<KayCaptionView> {
+        var captionViews = Set<KayCaptionView>()
         visiblePages
             .filter({ $0.captionView != nil })
             .forEach {
@@ -194,7 +194,7 @@ class StnPagingScrollView: UIScrollView {
     }
 }
 
-private extension StnPagingScrollView {
+private extension KayPagingScrollView {
     func frameForPageAtIndex(_ index: Int) -> CGRect {
         var pageFrame = bounds
         pageFrame.size.width -= (2 * sideMargin)
@@ -202,11 +202,11 @@ private extension StnPagingScrollView {
         return pageFrame
     }
     
-    func createCaptionView(_ index: Int) -> StnCaptionView? {
+    func createCaptionView(_ index: Int) -> KayCaptionView? {
         guard let photo = browser?.photoAtIndex(index) , photo.caption != nil else {
             return nil
         }
-        return StnCaptionView(photo: photo)
+        return KayCaptionView(photo: photo)
     }
     
     func getFirstIndex() -> Int {

@@ -1,18 +1,18 @@
 //
-//  StnDetectingImageView.swift
-//  StnPhotoBrowser
+//  KayDetectingImageView.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
-@objc protocol StnDetectingImageViewDelegate {
+@objc protocol KayDetectingImageViewDelegate {
     func handleImageViewSingleTap(_ touchPoint: CGPoint)
     func handleImageViewDoubleTap(_ touchPoint: CGPoint)
 }
 
-class StnDetectingImageView: UIImageView {
-    weak var delegate: StnDetectingImageViewDelegate?
+class KayDetectingImageView: UIImageView {
+    weak var delegate: KayDetectingImageViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,7 +33,7 @@ class StnDetectingImageView: UIImageView {
     }
 }
 
-private extension StnDetectingImageView {
+private extension KayDetectingImageView {
     func setup() {
         isUserInteractionEnabled = true
         

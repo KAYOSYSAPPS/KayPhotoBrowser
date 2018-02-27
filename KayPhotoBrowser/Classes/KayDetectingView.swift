@@ -1,18 +1,18 @@
 //
-//  StnDetectingView.swift
-//  StnPhotoBrowser
+//  KayDetectingView.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
-@objc protocol StnDetectingViewDelegate {
+@objc protocol KayDetectingViewDelegate {
     func handleSingleTap(_ view: UIView, touch: UITouch)
     func handleDoubleTap(_ view: UIView, touch: UITouch)
 }
 
-class StnDetectingView: UIView {
-    weak var delegate: StnDetectingViewDelegate?
+class KayDetectingView: UIView {
+    weak var delegate: KayDetectingViewDelegate?
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)

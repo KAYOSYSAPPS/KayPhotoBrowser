@@ -1,12 +1,12 @@
 //
-//  StnPhoto.swift
-//  StnViewExample
+//  KayPhoto.swift
+//  KayViewExample
 //
 //
 
 import UIKit
 
-@objc public protocol StnPhotoProtocol: NSObjectProtocol {
+@objc public protocol KayPhotoProtocol: NSObjectProtocol {
     var underlyingImage: UIImage! { get }
     var caption: String! { get }
     var index: Int { get set}
@@ -15,8 +15,8 @@ import UIKit
     func checkCache()
 }
 
-// MARK: - StnPhoto
-open class StnPhoto: NSObject, StnPhotoProtocol {
+// MARK: - KayPhoto
+open class KayPhoto: NSObject, KayPhotoProtocol {
     
     open var underlyingImage: UIImage!
     open var photoURL: String!
@@ -53,13 +53,13 @@ open class StnPhoto: NSObject, StnPhotoProtocol {
             return
         }
         
-        if StnCache.sharedCache.imageCache is StnRequestResponseCacheable {
+        if KayCache.sharedCache.imageCache is KayRequestResponseCacheable {
             let request = URLRequest(url: URL(string: photoURL)!)
-            if let img = StnCache.sharedCache.imageForRequest(request) {
+            if let img = KayCache.sharedCache.imageForRequest(request) {
                 underlyingImage = img
             }
         } else {
-            if let img = StnCache.sharedCache.imageForKey(photoURL) {
+            if let img = KayCache.sharedCache.imageForKey(photoURL) {
                 underlyingImage = img
             }
         }
@@ -88,10 +88,10 @@ open class StnPhoto: NSObject, StnPhotoProtocol {
                         
                         if let data = data, let response = response, let image = UIImage(data: data) {
                             if _self.shouldCachePhotoURLImage {
-                                if StnCache.sharedCache.imageCache is StnRequestResponseCacheable {
-                                    StnCache.sharedCache.setImageData(data, response: response, request: task.originalRequest!)
+                                if KayCache.sharedCache.imageCache is KayRequestResponseCacheable {
+                                    KayCache.sharedCache.setImageData(data, response: response, request: task.originalRequest!)
                                 } else {
-                                    StnCache.sharedCache.setImage(image, forKey: _self.photoURL)
+                                    KayCache.sharedCache.setImage(image, forKey: _self.photoURL)
                                 }
                             }
                             DispatchQueue.main.async {
@@ -108,23 +108,23 @@ open class StnPhoto: NSObject, StnPhotoProtocol {
     }
 
     open func loadUnderlyingImageComplete() {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: StnPHOTO_LOADING_DID_END_NOTIFICATION), object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: KayPHOTO_LOADING_DID_END_NOTIFICATION), object: self)
     }
     
 }
 
 // MARK: - Static Function
 
-extension StnPhoto {
-    public static func photoWithImage(_ image: UIImage) -> StnPhoto {
-        return StnPhoto(image: image)
+extension KayPhoto {
+    public static func photoWithImage(_ image: UIImage) -> KayPhoto {
+        return KayPhoto(image: image)
     }
     
-    public static func photoWithImageURL(_ url: String) -> StnPhoto {
-        return StnPhoto(url: url)
+    public static func photoWithImageURL(_ url: String) -> KayPhoto {
+        return KayPhoto(url: url)
     }
     
-    public static func photoWithImageURL(_ url: String, holder: UIImage?) -> StnPhoto {
-        return StnPhoto(url: url, holder: holder)
+    public static func photoWithImageURL(_ url: String, holder: UIImage?) -> KayPhoto {
+        return KayPhoto(url: url, holder: holder)
     }
 }

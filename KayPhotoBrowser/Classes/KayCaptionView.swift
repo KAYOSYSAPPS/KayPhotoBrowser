@@ -1,6 +1,6 @@
 //
-//  StnCaptionView.swift
-//  StnPhotoBrowser
+//  KayCaptionView.swift
+//  KayPhotoBrowser
 //
 //
 
@@ -26,8 +26,8 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-open class StnCaptionView: UIView {
-    fileprivate var photo: StnPhotoProtocol?
+open class KayCaptionView: UIView {
+    fileprivate var photo: KayPhotoProtocol?
     fileprivate var photoLabel: UILabel!
     fileprivate var photoLabelPadding: CGFloat = 10
     
@@ -39,7 +39,7 @@ open class StnCaptionView: UIView {
         super.init(frame: frame)
     }
     
-    public convenience init(photo: StnPhotoProtocol) {
+    public convenience init(photo: KayPhotoProtocol) {
         let screenBound = UIScreen.main.bounds
         self.init(frame: CGRect(x: 0, y: 0, width: screenBound.size.width, height: screenBound.size.height))
         self.photo = photo
@@ -65,7 +65,7 @@ open class StnCaptionView: UIView {
     }
 }
 
-private extension StnCaptionView {
+private extension KayCaptionView {
     func setup() {
         isOpaque = false
         autoresizingMask = [.flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin]
@@ -85,7 +85,7 @@ private extension StnCaptionView {
         photoLabel.numberOfLines = 3
         photoLabel.shadowColor = UIColor(white: 0.0, alpha: 0.5)
         photoLabel.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        photoLabel.font = StnPhotoBrowserOptions.captionFont
+        photoLabel.font = KayPhotoBrowserOptions.captionFont
         photoLabel.text = photo?.caption
         addSubview(photoLabel)
     }

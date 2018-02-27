@@ -1,6 +1,6 @@
 //
-//  StnButtons.swift
-//  StnPhotoBrowser
+//  KayButtons.swift
+//  KayPhotoBrowser
 //
 //  Created by 鈴木 啓司 on 2016/08/09.
 //  Copyright © 2016年 suzuki_keishi. All rights reserved.
@@ -9,9 +9,9 @@
 import Foundation
 
 // helpers which often used
-private let bundle = Bundle(for: StnPhotoBrowser.self)
+private let bundle = Bundle(for: KayPhotoBrowser.self)
 
-class StnButton: UIButton {
+class KayButton: UIButton {
     var showFrame: CGRect!
     var hideFrame: CGRect!
     var insets: UIEdgeInsets {
@@ -49,7 +49,7 @@ class StnButton: UIButton {
     }
 }
 
-class StnCloseButton: StnButton {
+class KayCloseButton: KayButton {
     let imageName = "btn_common_close_wh"
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -66,7 +66,7 @@ class StnCloseButton: StnButton {
     }
 }
 
-class StnDeleteButton: StnButton {
+class KayDeleteButton: KayButton {
     let imageName = "btn_common_delete_wh"
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -75,17 +75,17 @@ class StnDeleteButton: StnButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(imageName)
-        showFrame = CGRect(x: StnMesurement.screenWidth - size.width, y: buttonTopOffset, width: size.width, height: size.height)
-        hideFrame = CGRect(x: StnMesurement.screenWidth - size.width, y: -20, width: size.width, height: size.height)
+        showFrame = CGRect(x: KayMesurement.screenWidth - size.width, y: buttonTopOffset, width: size.width, height: size.height)
+        hideFrame = CGRect(x: KayMesurement.screenWidth - size.width, y: -20, width: size.width, height: size.height)
     }
     
     override func updateFrame() {
     }
   
     override func setFrameSize(_ size: CGSize) {
-        let newRect = CGRect(x: StnMesurement.screenWidth - size.width, y: buttonTopOffset, width: size.width, height: size.height)
+        let newRect = CGRect(x: KayMesurement.screenWidth - size.width, y: buttonTopOffset, width: size.width, height: size.height)
         self.frame = newRect
         showFrame = newRect
-        hideFrame = CGRect(x: StnMesurement.screenWidth - size.width, y: -20, width: size.width, height: size.height)
+        hideFrame = CGRect(x: KayMesurement.screenWidth - size.width, y: -20, width: size.width, height: size.height)
     }
 }

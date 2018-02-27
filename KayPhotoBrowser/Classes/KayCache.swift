@@ -1,21 +1,21 @@
 //
-//  StnCache.swift
-//  StnPhotoBrowser
+//  KayCache.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
-open class StnCache {
-    open static let sharedCache = StnCache()
-    open var imageCache: StnCacheable
+open class KayCache {
+    open static let sharedCache = KayCache()
+    open var imageCache: KayCacheable
 
     init() {
-        self.imageCache = StnDefaultImageCache()
+        self.imageCache = KayDefaultImageCache()
     }
 
     open func imageForKey(_ key: String) -> UIImage? {
-        guard let cache = imageCache as? StnImageCacheable else {
+        guard let cache = imageCache as? KayImageCacheable else {
             return nil
         }
         
@@ -23,7 +23,7 @@ open class StnCache {
     }
 
     open func setImage(_ image: UIImage, forKey key: String) {
-        guard let cache = imageCache as? StnImageCacheable else {
+        guard let cache = imageCache as? KayImageCacheable else {
             return
         }
         
@@ -31,7 +31,7 @@ open class StnCache {
     }
 
     open func removeImageForKey(_ key: String) {
-        guard let cache = imageCache as? StnImageCacheable else {
+        guard let cache = imageCache as? KayImageCacheable else {
             return
         }
         
@@ -39,7 +39,7 @@ open class StnCache {
     }
 
     open func imageForRequest(_ request: URLRequest) -> UIImage? {
-        guard let cache = imageCache as? StnRequestResponseCacheable else {
+        guard let cache = imageCache as? KayRequestResponseCacheable else {
             return nil
         }
         
@@ -50,7 +50,7 @@ open class StnCache {
     }
 
     open func setImageData(_ data: Data, response: URLResponse, request: URLRequest) {
-        guard let cache = imageCache as? StnRequestResponseCacheable else {
+        guard let cache = imageCache as? KayRequestResponseCacheable else {
             return
         }
         let cachedResponse = CachedURLResponse(response: response, data: data)
@@ -58,7 +58,7 @@ open class StnCache {
     }
 }
 
-class StnDefaultImageCache: StnImageCacheable {
+class KayDefaultImageCache: KayImageCacheable {
     var cache: NSCache<AnyObject, AnyObject>
 
     init() {

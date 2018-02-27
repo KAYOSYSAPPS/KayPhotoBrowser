@@ -1,12 +1,12 @@
 //
-//  StnPhotoBrowserOptions.swift
-//  StnPhotoBrowser
+//  KayPhotoBrowserOptions.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
-public struct StnPhotoBrowserOptions {
+public struct KayPhotoBrowserOptions {
     public static var displayStatusbar: Bool = false
     
     public static var displayAction: Bool = true

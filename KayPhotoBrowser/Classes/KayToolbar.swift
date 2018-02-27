@@ -1,22 +1,22 @@
 //
-//  StnToolbar.swift
-//  StnPhotoBrowser
+//  KayToolbar.swift
+//  KayPhotoBrowser
 //
 //
 
 import Foundation
 
 // helpers which often used
-private let bundle = Bundle(for: StnPhotoBrowser.self)
+private let bundle = Bundle(for: KayPhotoBrowser.self)
 
-class StnToolbar: UIToolbar {
+class KayToolbar: UIToolbar {
     var toolCounterLabel: UILabel!
     var toolCounterButton: UIBarButtonItem!
     var toolPreviousButton: UIBarButtonItem!
     var toolNextButton: UIBarButtonItem!
     var toolActionButton: UIBarButtonItem!
     
-    fileprivate weak var browser: StnPhotoBrowser?
+    fileprivate weak var browser: KayPhotoBrowser?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,7 +26,7 @@ class StnToolbar: UIToolbar {
         super.init(frame: frame)
     }
     
-    convenience init(frame: CGRect, browser: StnPhotoBrowser) {
+    convenience init(frame: CGRect, browser: KayPhotoBrowser) {
         self.init(frame: frame)
         self.browser = browser
         
@@ -52,7 +52,7 @@ class StnToolbar: UIToolbar {
     }
 }
 
-private extension StnToolbar {
+private extension KayToolbar {
     func setupApperance() {
         backgroundColor = UIColor.clear
         clipsToBounds = true
@@ -60,7 +60,7 @@ private extension StnToolbar {
         setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
         
         // toolbar
-        if !StnPhotoBrowserOptions.displayToolbar {
+        if !KayPhotoBrowserOptions.displayToolbar {
             isHidden = true
         }
     }
@@ -71,35 +71,35 @@ private extension StnToolbar {
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         var items = [UIBarButtonItem]()
         items.append(flexSpace)
-        if browser.numberOfPhotos > 1 && StnPhotoBrowserOptions.displayBackAndForwardButton {
+        if browser.numberOfPhotos > 1 && KayPhotoBrowserOptions.displayBackAndForwardButton {
             items.append(toolPreviousButton)
         }
-        if StnPhotoBrowserOptions.displayCounterLabel {
+        if KayPhotoBrowserOptions.displayCounterLabel {
             items.append(flexSpace)
             items.append(toolCounterButton)
             items.append(flexSpace)
         } else {
             items.append(flexSpace)
         }
-        if browser.numberOfPhotos > 1 && StnPhotoBrowserOptions.displayBackAndForwardButton {
+        if browser.numberOfPhotos > 1 && KayPhotoBrowserOptions.displayBackAndForwardButton {
             items.append(toolNextButton)
         }
         items.append(flexSpace)
-        if StnPhotoBrowserOptions.displayAction {
+        if KayPhotoBrowserOptions.displayAction {
             items.append(toolActionButton)
         }
         setItems(items, animated: false)
     }
     
     func setupPreviousButton() {
-        let previousBtn = StnPreviousButton(frame: frame)
-        previousBtn.addTarget(browser, action: #selector(StnPhotoBrowser.gotoPreviousPage), for: .touchUpInside)
+        let previousBtn = KayPreviousButton(frame: frame)
+        previousBtn.addTarget(browser, action: #selector(KayPhotoBrowser.gotoPreviousPage), for: .touchUpInside)
         toolPreviousButton = UIBarButtonItem(customView: previousBtn)
     }
     
     func setupNextButton() {
-        let nextBtn = StnNextButton(frame: frame)
-        nextBtn.addTarget(browser, action: #selector(StnPhotoBrowser.gotoNextPage), for: .touchUpInside)
+        let nextBtn = KayNextButton(frame: frame)
+        nextBtn.addTarget(browser, action: #selector(KayPhotoBrowser.gotoNextPage), for: .touchUpInside)
         toolNextButton = UIBarButtonItem(customView: nextBtn)
     }
     
@@ -115,13 +115,13 @@ private extension StnToolbar {
     }
     
     func setupActionButton() {
-        toolActionButton = UIBarButtonItem(barButtonSystemItem: .action, target: browser, action: #selector(StnPhotoBrowser.actionButtonPressed))
+        toolActionButton = UIBarButtonItem(barButtonSystemItem: .action, target: browser, action: #selector(KayPhotoBrowser.actionButtonPressed))
         toolActionButton.tintColor = UIColor.white
     }
 }
 
 
-class StnToolbarButton: UIButton {
+class KayToolbarButton: UIButton {
     let insets: UIEdgeInsets = UIEdgeInsets(top: 13.25, left: 17.25, bottom: 13.25, right: 17.25)
     
     func setup(_ imageName: String) {
@@ -131,13 +131,13 @@ class StnToolbarButton: UIButton {
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         contentMode = .center
         
-        let image = UIImage(named: "StnPhotoBrowser.bundle/images/\(imageName)",
+        let image = UIImage(named: "KayPhotoBrowser.bundle/images/\(imageName)",
                             in: bundle, compatibleWith: nil) ?? UIImage()
         setImage(image, for: UIControlState())
     }
 }
 
-class StnPreviousButton: StnToolbarButton {
+class KayPreviousButton: KayToolbarButton {
     let imageName = "btn_common_back_wh"
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -149,7 +149,7 @@ class StnPreviousButton: StnToolbarButton {
     }
 }
 
-class StnNextButton: StnToolbarButton {
+class KayNextButton: KayToolbarButton {
     let imageName = "btn_common_forward_wh"
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

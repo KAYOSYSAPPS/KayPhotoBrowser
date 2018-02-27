@@ -1,12 +1,12 @@
 //
-//  StnIndicatorView.swift
-//  StnPhotoBrowser
+//  KayIndicatorView.swift
+//  KayPhotoBrowser
 //
 //
 
 import UIKit
 
-class StnIndicatorView: UIActivityIndicatorView {
+class KayIndicatorView: UIActivityIndicatorView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

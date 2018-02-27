@@ -1,12 +1,12 @@
 //
-//  StnPhotoBrowserDelegate.swift
-//  StnPhotoBrowser
+//  KayPhotoBrowserDelegate.swift
+//  KayPhotoBrowser
 //
 //
 
 import Foundation
 
-@objc public protocol StnPhotoBrowserDelegate {
+@objc public protocol KayPhotoBrowserDelegate {
     
     /**
      Tells the delegate that the browser started displaying a new photo
@@ -54,21 +54,21 @@ import Foundation
     /**
      Tells the delegate the user removed a photo, when implementing this call, be sure to call reload to finish the deletion process
      
-     - Parameter browser: reference to the calling StnPhotoBrowser
+     - Parameter browser: reference to the calling KayPhotoBrowser
      - Parameter index: the index of the removed photo
      - Parameter reload: function that needs to be called after finishing syncing up
      */
-    @objc optional func removePhoto(_ browser: StnPhotoBrowser, index: Int, reload: @escaping (() -> Void))
+    @objc optional func removePhoto(_ browser: KayPhotoBrowser, index: Int, reload: @escaping (() -> Void))
     
     /**
      Asks the delegate for the view for a certain photo. Needed to detemine the animation when presenting/closing the browser.
      
-     - Parameter browser: reference to the calling StnPhotoBrowser
+     - Parameter browser: reference to the calling KayPhotoBrowser
      - Parameter index: the index of the removed photo
      
      - Returns: the view to animate to
      */
-    @objc optional func viewForPhoto(_ browser: StnPhotoBrowser, index: Int) -> UIView?
+    @objc optional func viewForPhoto(_ browser: KayPhotoBrowser, index: Int) -> UIView?
     
     /**
      Tells the delegate that the controls view toggled visibility

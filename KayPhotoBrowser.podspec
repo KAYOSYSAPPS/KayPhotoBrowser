@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Desc
+Desc: A photo browser
                        DESC
 
   s.homepage         = 'https://github.com/KAYOSYSAPPS/KayPhotoBrowser'

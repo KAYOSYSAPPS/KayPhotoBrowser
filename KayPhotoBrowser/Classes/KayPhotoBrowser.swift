@@ -1,23 +1,23 @@
 //
-//  StnPhotoBrowser.swift
-//  StnViewExample
+//  KayPhotoBrowser.swift
+//  KayViewExample
 //
 //
 
 import UIKit
 
-public let StnPHOTO_LOADING_DID_END_NOTIFICATION = "photoLoadingDidEndNotification"
+public let KayPHOTO_LOADING_DID_END_NOTIFICATION = "photoLoadingDidEndNotification"
 
-// MARK: - StnPhotoBrowser
-open class StnPhotoBrowser: UIViewController {
+// MARK: - KayPhotoBrowser
+open class KayPhotoBrowser: UIViewController {
     
     let pageIndexTagOffset: Int = 1000
     
     fileprivate var _topView: UIView!
     
-    fileprivate var closeButton: StnCloseButton!
-    fileprivate var deleteButton: StnDeleteButton!
-    fileprivate var toolbar: StnToolbar!
+    fileprivate var closeButton: KayCloseButton!
+    fileprivate var deleteButton: KayDeleteButton!
+    fileprivate var toolbar: KayToolbar!
     
     // actions
     fileprivate var activityViewController: UIActivityViewController!
@@ -26,7 +26,7 @@ open class StnPhotoBrowser: UIViewController {
     
     // tool for controls
     fileprivate var applicationWindow: UIWindow!
-    fileprivate lazy var pagingScrollView: StnPagingScrollView = StnPagingScrollView(frame: self.view.frame, browser: self)
+    fileprivate lazy var pagingScrollView: KayPagingScrollView = KayPagingScrollView(frame: self.view.frame, browser: self)
     var backgroundView: UIView!
     
     var initialPageIndex: Int = 0
@@ -47,11 +47,11 @@ open class StnPhotoBrowser: UIViewController {
     fileprivate var controlVisibilityTimer: Timer!
     
     // delegate
-    fileprivate let animator = StnAnimator()
-    open weak var delegate: StnPhotoBrowserDelegate?
+    fileprivate let animator = KayAnimator()
+    open weak var delegate: KayPhotoBrowserDelegate?
     
     // photos
-    var photos: [StnPhotoProtocol] = [StnPhotoProtocol]()
+    var photos: [KayPhotoProtocol] = [KayPhotoProtocol]()
     var numberOfPhotos: Int {
         return photos.count
     }
@@ -70,7 +70,7 @@ open class StnPhotoBrowser: UIViewController {
         setup()
     }
     
-    public convenience init(photos: [StnPhotoProtocol], _titleText: String) {
+    public convenience init(photos: [KayPhotoProtocol], _titleText: String) {
         self.init(nibName: nil, bundle: nil)
         let pictures = photos.flatMap { $0 }
         for photo in pictures {
@@ -80,7 +80,7 @@ open class StnPhotoBrowser: UIViewController {
         titleText = _titleText
     }
     
-    public convenience init(originImage: UIImage, photos: [StnPhotoProtocol], animatedFromView: UIView) {
+    public convenience init(originImage: UIImage, photos: [KayPhotoProtocol], animatedFromView: UIView) {
         self.init(nibName: nil, bundle: nil)
         animator.senderOriginImage = originImage
         animator.senderViewForAnimation = animatedFromView
@@ -109,7 +109,7 @@ open class StnPhotoBrowser: UIViewController {
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleStnPhotoLoadingDidEndNotification(_:)), name: NSNotification.Name(rawValue: StnPHOTO_LOADING_DID_END_NOTIFICATION), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKayPhotoLoadingDidEndNotification(_:)), name: NSNotification.Name(rawValue: KayPHOTO_LOADING_DID_END_NOTIFICATION), object: nil)
     }
     
     // MARK: - override
@@ -137,7 +137,7 @@ open class StnPhotoBrowser: UIViewController {
         reloadData()
         
         var i = 0
-        for photo: StnPhotoProtocol in photos {
+        for photo: KayPhotoProtocol in photos {
             photo.index = i
             i = i + 1
         }
@@ -165,8 +165,8 @@ open class StnPhotoBrowser: UIViewController {
     }
     
     // MARK: - Notification
-    open func handleStnPhotoLoadingDidEndNotification(_ notification: Notification) {
-        guard let photo = notification.object as? StnPhotoProtocol else {
+    open func handleKayPhotoLoadingDidEndNotification(_ notification: Notification) {
+        guard let photo = notification.object as? KayPhotoProtocol else {
             return
         }
         
@@ -184,7 +184,7 @@ open class StnPhotoBrowser: UIViewController {
         })
     }
     
-    open func loadAdjacentPhotosIfNecessary(_ photo: StnPhotoProtocol) {
+    open func loadAdjacentPhotosIfNecessary(_ photo: KayPhotoProtocol) {
         pagingScrollView.loadAdjacentPhotosIfNecessary(photo, currentPageIndex: currentPageIndex)
     }
     
@@ -238,7 +238,7 @@ open class StnPhotoBrowser: UIViewController {
 
 // MARK: - Public Function For Customizing Buttons
 
-public extension StnPhotoBrowser {
+public extension KayPhotoBrowser {
     func updateCloseButton(_ image: UIImage, size: CGSize? = nil) {
         if closeButton == nil {
             configureCloseButton()
@@ -264,7 +264,7 @@ public extension StnPhotoBrowser {
 
 // MARK: - Public Function For Browser Control
 
-public extension StnPhotoBrowser {
+public extension KayPhotoBrowser {
     func initializePageIndex(_ index: Int) {
         var i = index
         if index >= numberOfPhotos {
@@ -296,7 +296,7 @@ public extension StnPhotoBrowser {
         hideControlsAfterDelay()
     }
     
-    func photoAtIndex(_ index: Int) -> StnPhotoProtocol {
+    func photoAtIndex(_ index: Int) -> KayPhotoProtocol {
         return photos[index]
     }
     
@@ -319,7 +319,7 @@ public extension StnPhotoBrowser {
         // reset
         cancelControlHiding()
         // start
-        controlVisibilityTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(StnPhotoBrowser.hideControls(_:)), userInfo: nil, repeats: false)
+        controlVisibilityTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(KayPhotoBrowser.hideControls(_:)), userInfo: nil, repeats: false)
     }
     
     func hideControls() {
@@ -352,7 +352,7 @@ public extension StnPhotoBrowser {
         
         var activityItems: [AnyObject] = [underlyingImage]
         if photo.caption != nil && includeCaption {
-            if let shareExtraCaption = StnPhotoBrowserOptions.shareExtraCaption {
+            if let shareExtraCaption = KayPhotoBrowserOptions.shareExtraCaption {
                 let caption = photo.caption + shareExtraCaption
                 activityItems.append(caption as AnyObject)
             } else {
@@ -388,22 +388,22 @@ public extension StnPhotoBrowser {
 
 // MARK: - Internal Function
 
-internal extension StnPhotoBrowser {
+internal extension KayPhotoBrowser {
     func showButtons() {
-        if StnPhotoBrowserOptions.displayCloseButton {
+        if KayPhotoBrowserOptions.displayCloseButton {
             closeButton.alpha = 1
             //            closeButton.frame = closeButton.showFrame
             closeButton.frame = CGRect(x: 0, y: 0, width: ((self.view.frame.size.height) * 0.0824), height: ((self.view.frame.size.height) * 0.0824))
             _topView.alpha = 1
             _topView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: ((self.view.frame.size.height) * 0.0824))
         }
-        if StnPhotoBrowserOptions.displayDeleteButton {
+        if KayPhotoBrowserOptions.displayDeleteButton {
             deleteButton.alpha = 1
             deleteButton.frame = deleteButton.showFrame
         }
     }
     
-    func pageDisplayedAtIndex(_ index: Int) -> StnZoomingScrollView? {
+    func pageDisplayedAtIndex(_ index: Int) -> KayZoomingScrollView? {
         return pagingScrollView.pageDisplayedAtIndex(index)
     }
     
@@ -418,7 +418,7 @@ internal extension StnPhotoBrowser {
 
 // MARK: - Internal Function For Frame Calc
 
-internal extension StnPhotoBrowser {
+internal extension KayPhotoBrowser {
     func frameForToolbarAtOrientation() -> CGRect {
         let currentOrientation = UIApplication.shared.statusBarOrientation
         var height: CGFloat = navigationController?.navigationBar.frame.size.height ?? 44
@@ -448,9 +448,9 @@ internal extension StnPhotoBrowser {
 
 // MARK: - Internal Function For Button Pressed, UIGesture Control
 
-internal extension StnPhotoBrowser {
+internal extension KayPhotoBrowser {
     func panGestureRecognized(_ sender: UIPanGestureRecognizer) {
-        guard let zoomingScrollView: StnZoomingScrollView = pagingScrollView.pageDisplayedAtIndex(currentPageIndex) else {
+        guard let zoomingScrollView: KayZoomingScrollView = pagingScrollView.pageDisplayedAtIndex(currentPageIndex) else {
             return
         }
         
@@ -525,7 +525,7 @@ internal extension StnPhotoBrowser {
             return
         }
         
-        if let titles = StnPhotoBrowserOptions.actionButtonTitles {
+        if let titles = KayPhotoBrowserOptions.actionButtonTitles {
             let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             actionSheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
             }))
@@ -556,13 +556,13 @@ internal extension StnPhotoBrowser {
 }
 
 // MARK: - Private Function
-private extension StnPhotoBrowser {
+private extension KayPhotoBrowser {
     func configureAppearance() {
         view.backgroundColor = UIColor.black
         view.clipsToBounds = true
         view.isOpaque = false
         
-        backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: StnMesurement.screenWidth, height: StnMesurement.screenHeight))
+        backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: KayMesurement.screenWidth, height: KayMesurement.screenHeight))
         backgroundView.backgroundColor = UIColor.black
         backgroundView.alpha = 0.0
         applicationWindow.addSubview(backgroundView)
@@ -570,10 +570,10 @@ private extension StnPhotoBrowser {
         pagingScrollView.delegate = self
         view.addSubview(pagingScrollView)
         
-        panGesture = UIPanGestureRecognizer(target: self, action: #selector(StnPhotoBrowser.panGestureRecognized(_:)))
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(KayPhotoBrowser.panGestureRecognized(_:)))
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 1
-        if !StnPhotoBrowserOptions.disableVerticalSwipe {
+        if !KayPhotoBrowserOptions.disableVerticalSwipe {
             view.addGestureRecognizer(panGesture)
         }
     }
@@ -587,7 +587,7 @@ private extension StnPhotoBrowser {
         lblTitle.frame.size.width = _topView.frame.size.width * 0.664
         lblTitle.center = _topView.center
         lblTitle.text = titleText
-        lblTitle.font = StnPhotoBrowserOptions.titleFont
+        lblTitle.font = KayPhotoBrowserOptions.titleFont
         lblTitle.adjustsFontSizeToFitWidth = true
         lblTitle.textColor = .white
         lblTitle.textAlignment = .center
@@ -595,21 +595,21 @@ private extension StnPhotoBrowser {
         _topView.addSubview(lblTitle)
         view.addSubview(_topView)
         
-        closeButton = StnCloseButton(frame: CGRect(x: 0, y: 0, width: ((self.view.frame.size.height) * 0.0824), height: ((self.view.frame.size.height) * 0.0824)))
+        closeButton = KayCloseButton(frame: CGRect(x: 0, y: 0, width: ((self.view.frame.size.height) * 0.0824), height: ((self.view.frame.size.height) * 0.0824)))
         closeButton.addTarget(self, action: #selector(closeButtonPressed(_:)), for: .touchUpInside)
-        closeButton.isHidden = !StnPhotoBrowserOptions.displayCloseButton
+        closeButton.isHidden = !KayPhotoBrowserOptions.displayCloseButton
         _topView.addSubview(closeButton)
     }
     
     func configureDeleteButton() {
-        deleteButton = StnDeleteButton(frame: .zero)
+        deleteButton = KayDeleteButton(frame: .zero)
         deleteButton.addTarget(self, action: #selector(deleteButtonPressed(_:)), for: .touchUpInside)
-        deleteButton.isHidden = !StnPhotoBrowserOptions.displayDeleteButton
+        deleteButton.isHidden = !KayPhotoBrowserOptions.displayDeleteButton
         view.addSubview(deleteButton)
     }
     
     func configureToolbar() {
-        toolbar = StnToolbar(frame: frameForToolbarAtOrientation(), browser: self)
+        toolbar = KayToolbar(frame: frameForToolbarAtOrientation(), browser: self)
         view.addSubview(toolbar)
     }
     
@@ -626,7 +626,7 @@ private extension StnPhotoBrowser {
                         self.toolbar.frame = hidden ? self.frameForToolbarHideAtOrientation() : self.frameForToolbarAtOrientation()
                         
                         /*
-                         if StnPhotoBrowserOptions.displayCloseButton {
+                         if KayPhotoBrowserOptions.displayCloseButton {
                          //                    self.closeButton.alpha = alpha
                          //                    self.closeButton.frame = hidden ? self.closeButton.hideFrame : self.closeButton.showFrame
                          self._topView.alpha = alpha
@@ -638,7 +638,7 @@ private extension StnPhotoBrowser {
                          self._topView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: ((self.view.frame.size.height) * 0.0824))
                          }
                          }*/
-                        if StnPhotoBrowserOptions.displayDeleteButton {
+                        if KayPhotoBrowserOptions.displayDeleteButton {
                             self.deleteButton.alpha = alpha
                             self.deleteButton.frame = hidden ? self.deleteButton.hideFrame : self.deleteButton.showFrame
                         }
@@ -675,7 +675,7 @@ private extension StnPhotoBrowser {
 
 // MARK: -  UIScrollView Delegate
 
-extension StnPhotoBrowser: UIScrollViewDelegate {
+extension KayPhotoBrowser: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard isViewActive else {
             return

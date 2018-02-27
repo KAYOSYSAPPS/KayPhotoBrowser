@@ -1,13 +1,13 @@
 //
-//  StnMesurement.swift
-//  StnPhotoBrowser
+//  KayMesurement.swift
+//  KayPhotoBrowser
 //
 //
 
 import Foundation
 import UIKit
 
-struct StnMesurement {
+struct KayMesurement {
     static let isPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
     static let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
     static var statusBarH: CGFloat {

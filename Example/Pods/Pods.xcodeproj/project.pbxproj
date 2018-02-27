@@ -13,24 +13,26 @@
 		A0D2285BFF10993B0269896C8569E102 /* Pods-KayPhotoBrowser_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5541858FEBA3B1DABF85678624F4E584 /* Pods-KayPhotoBrowser_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCFC25FD2B7B2DED74010E3F21995838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CE8925A6D4DD6EF7F9FD741D84365D31 /* KayPhotoBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 369A050A0E0DB49D5211C5D86775A01A /* KayPhotoBrowser-dummy.m */; };
-		EF07FAC72045352E008088AC /* StnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB42045352E008088AC /* StnAnimator.swift */; };
-		EF07FAC82045352E008088AC /* StnButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB52045352E008088AC /* StnButtons.swift */; };
-		EF07FAC92045352E008088AC /* StnCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB62045352E008088AC /* StnCache.swift */; };
-		EF07FACA2045352E008088AC /* StnCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB72045352E008088AC /* StnCacheable.swift */; };
-		EF07FACB2045352E008088AC /* StnCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB82045352E008088AC /* StnCaptionView.swift */; };
-		EF07FACC2045352E008088AC /* StnDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB92045352E008088AC /* StnDetectingImageView.swift */; };
-		EF07FACD2045352E008088AC /* StnDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABA2045352E008088AC /* StnDetectingView.swift */; };
-		EF07FACE2045352E008088AC /* StnIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABB2045352E008088AC /* StnIndicatorView.swift */; };
-		EF07FACF2045352E008088AC /* StnLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABC2045352E008088AC /* StnLocalPhoto.swift */; };
-		EF07FAD02045352E008088AC /* StnMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABD2045352E008088AC /* StnMesurement.swift */; };
-		EF07FAD12045352E008088AC /* StnPagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABE2045352E008088AC /* StnPagingScrollView.swift */; };
-		EF07FAD22045352E008088AC /* StnPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABF2045352E008088AC /* StnPhoto.swift */; };
-		EF07FAD32045352E008088AC /* StnPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = EF07FAC12045352E008088AC /* StnPhotoBrowser.h */; };
-		EF07FAD42045352E008088AC /* StnPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC22045352E008088AC /* StnPhotoBrowser.swift */; };
-		EF07FAD52045352E008088AC /* StnPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC32045352E008088AC /* StnPhotoBrowserDelegate.swift */; };
-		EF07FAD62045352E008088AC /* StnPhotoBrowserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC42045352E008088AC /* StnPhotoBrowserOptions.swift */; };
-		EF07FAD72045352E008088AC /* StnToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC52045352E008088AC /* StnToolbar.swift */; };
-		EF07FAD82045352E008088AC /* StnZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC62045352E008088AC /* StnZoomingScrollView.swift */; };
+		EF07FAC72045352E008088AC /* KayAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB42045352E008088AC /* KayAnimator.swift */; };
+		EF07FAC82045352E008088AC /* KayButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB52045352E008088AC /* KayButtons.swift */; };
+		EF07FAC92045352E008088AC /* KayCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB62045352E008088AC /* KayCache.swift */; };
+		EF07FACA2045352E008088AC /* KayCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB72045352E008088AC /* KayCacheable.swift */; };
+		EF07FACB2045352E008088AC /* KayCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB82045352E008088AC /* KayCaptionView.swift */; };
+		EF07FACC2045352E008088AC /* KayDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAB92045352E008088AC /* KayDetectingImageView.swift */; };
+		EF07FACD2045352E008088AC /* KayDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABA2045352E008088AC /* KayDetectingView.swift */; };
+		EF07FACE2045352E008088AC /* KayIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABB2045352E008088AC /* KayIndicatorView.swift */; };
+		EF07FACF2045352E008088AC /* KayLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABC2045352E008088AC /* KayLocalPhoto.swift */; };
+		EF07FAD02045352E008088AC /* KayMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABD2045352E008088AC /* KayMesurement.swift */; };
+		EF07FAD12045352E008088AC /* KayPagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABE2045352E008088AC /* KayPagingScrollView.swift */; };
+		EF07FAD22045352E008088AC /* KayPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FABF2045352E008088AC /* KayPhoto.swift */; };
+		EF07FAD32045352E008088AC /* KayPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = EF07FAC12045352E008088AC /* KayPhotoBrowser.h */; };
+		EF07FAD42045352E008088AC /* KayPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC22045352E008088AC /* KayPhotoBrowser.swift */; };
+		EF07FAD52045352E008088AC /* KayPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC32045352E008088AC /* KayPhotoBrowserDelegate.swift */; };
+		EF07FAD62045352E008088AC /* KayPhotoBrowserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC42045352E008088AC /* KayPhotoBrowserOptions.swift */; };
+		EF07FAD72045352E008088AC /* KayToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC52045352E008088AC /* KayToolbar.swift */; };
+		EF07FAD82045352E008088AC /* KayZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAC62045352E008088AC /* KayZoomingScrollView.swift */; };
+		EF07FAEB20453BEF008088AC /* UIView+Radius 12-34-05-512.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAEA20453BEF008088AC /* UIView+Radius 12-34-05-512.swift */; };
+		EF07FAED20453BFB008088AC /* UIImage+Rotation 12-34-05-543.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07FAEC20453BFB008088AC /* UIImage+Rotation 12-34-05-543.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,25 +65,27 @@
 		D5B314FB50108754428A7071DA3436F3 /* KayPhotoBrowser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KayPhotoBrowser.xcconfig; sourceTree = "<group>"; };
 		D88CF5F550E43966F9B291F2C1F360B7 /* Pods-KayPhotoBrowser_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KayPhotoBrowser_Tests.modulemap"; sourceTree = "<group>"; };
 		DFC3B64280BF90224D9DA4C5BEAB835E /* Pods-KayPhotoBrowser_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KayPhotoBrowser_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		EF07FAB42045352E008088AC /* StnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnAnimator.swift; sourceTree = "<group>"; };
-		EF07FAB52045352E008088AC /* StnButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnButtons.swift; sourceTree = "<group>"; };
-		EF07FAB62045352E008088AC /* StnCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnCache.swift; sourceTree = "<group>"; };
-		EF07FAB72045352E008088AC /* StnCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnCacheable.swift; sourceTree = "<group>"; };
-		EF07FAB82045352E008088AC /* StnCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnCaptionView.swift; sourceTree = "<group>"; };
-		EF07FAB92045352E008088AC /* StnDetectingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnDetectingImageView.swift; sourceTree = "<group>"; };
-		EF07FABA2045352E008088AC /* StnDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnDetectingView.swift; sourceTree = "<group>"; };
-		EF07FABB2045352E008088AC /* StnIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnIndicatorView.swift; sourceTree = "<group>"; };
-		EF07FABC2045352E008088AC /* StnLocalPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnLocalPhoto.swift; sourceTree = "<group>"; };
-		EF07FABD2045352E008088AC /* StnMesurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnMesurement.swift; sourceTree = "<group>"; };
-		EF07FABE2045352E008088AC /* StnPagingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnPagingScrollView.swift; sourceTree = "<group>"; };
-		EF07FABF2045352E008088AC /* StnPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnPhoto.swift; sourceTree = "<group>"; };
-		EF07FAC02045352E008088AC /* StnPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StnPhotoBrowser.bundle; sourceTree = "<group>"; };
-		EF07FAC12045352E008088AC /* StnPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StnPhotoBrowser.h; sourceTree = "<group>"; };
-		EF07FAC22045352E008088AC /* StnPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnPhotoBrowser.swift; sourceTree = "<group>"; };
-		EF07FAC32045352E008088AC /* StnPhotoBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnPhotoBrowserDelegate.swift; sourceTree = "<group>"; };
-		EF07FAC42045352E008088AC /* StnPhotoBrowserOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnPhotoBrowserOptions.swift; sourceTree = "<group>"; };
-		EF07FAC52045352E008088AC /* StnToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnToolbar.swift; sourceTree = "<group>"; };
-		EF07FAC62045352E008088AC /* StnZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnZoomingScrollView.swift; sourceTree = "<group>"; };
+		EF07FAB42045352E008088AC /* KayAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayAnimator.swift; sourceTree = "<group>"; };
+		EF07FAB52045352E008088AC /* KayButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayButtons.swift; sourceTree = "<group>"; };
+		EF07FAB62045352E008088AC /* KayCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayCache.swift; sourceTree = "<group>"; };
+		EF07FAB72045352E008088AC /* KayCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayCacheable.swift; sourceTree = "<group>"; };
+		EF07FAB82045352E008088AC /* KayCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayCaptionView.swift; sourceTree = "<group>"; };
+		EF07FAB92045352E008088AC /* KayDetectingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayDetectingImageView.swift; sourceTree = "<group>"; };
+		EF07FABA2045352E008088AC /* KayDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayDetectingView.swift; sourceTree = "<group>"; };
+		EF07FABB2045352E008088AC /* KayIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayIndicatorView.swift; sourceTree = "<group>"; };
+		EF07FABC2045352E008088AC /* KayLocalPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayLocalPhoto.swift; sourceTree = "<group>"; };
+		EF07FABD2045352E008088AC /* KayMesurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayMesurement.swift; sourceTree = "<group>"; };
+		EF07FABE2045352E008088AC /* KayPagingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayPagingScrollView.swift; sourceTree = "<group>"; };
+		EF07FABF2045352E008088AC /* KayPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayPhoto.swift; sourceTree = "<group>"; };
+		EF07FAC02045352E008088AC /* KayPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KayPhotoBrowser.bundle; sourceTree = "<group>"; };
+		EF07FAC12045352E008088AC /* KayPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KayPhotoBrowser.h; sourceTree = "<group>"; };
+		EF07FAC22045352E008088AC /* KayPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayPhotoBrowser.swift; sourceTree = "<group>"; };
+		EF07FAC32045352E008088AC /* KayPhotoBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayPhotoBrowserDelegate.swift; sourceTree = "<group>"; };
+		EF07FAC42045352E008088AC /* KayPhotoBrowserOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayPhotoBrowserOptions.swift; sourceTree = "<group>"; };
+		EF07FAC52045352E008088AC /* KayToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayToolbar.swift; sourceTree = "<group>"; };
+		EF07FAC62045352E008088AC /* KayZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayZoomingScrollView.swift; sourceTree = "<group>"; };
+		EF07FAEA20453BEF008088AC /* UIView+Radius 12-34-05-512.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Radius 12-34-05-512.swift"; sourceTree = "<group>"; };
+		EF07FAEC20453BFB008088AC /* UIImage+Rotation 12-34-05-543.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotation 12-34-05-543.swift"; sourceTree = "<group>"; };
 		FA4DEA52BDC57E831C46E9E778391E57 /* Pods_KayPhotoBrowser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KayPhotoBrowser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,25 +137,26 @@
 		786C193A89352414D2D970C301A4E672 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EF07FAB42045352E008088AC /* StnAnimator.swift */,
-				EF07FAB52045352E008088AC /* StnButtons.swift */,
-				EF07FAB62045352E008088AC /* StnCache.swift */,
-				EF07FAB72045352E008088AC /* StnCacheable.swift */,
-				EF07FAB82045352E008088AC /* StnCaptionView.swift */,
-				EF07FAB92045352E008088AC /* StnDetectingImageView.swift */,
-				EF07FABA2045352E008088AC /* StnDetectingView.swift */,
-				EF07FABB2045352E008088AC /* StnIndicatorView.swift */,
-				EF07FABC2045352E008088AC /* StnLocalPhoto.swift */,
-				EF07FABD2045352E008088AC /* StnMesurement.swift */,
-				EF07FABE2045352E008088AC /* StnPagingScrollView.swift */,
-				EF07FABF2045352E008088AC /* StnPhoto.swift */,
-				EF07FAC02045352E008088AC /* StnPhotoBrowser.bundle */,
-				EF07FAC12045352E008088AC /* StnPhotoBrowser.h */,
-				EF07FAC22045352E008088AC /* StnPhotoBrowser.swift */,
-				EF07FAC32045352E008088AC /* StnPhotoBrowserDelegate.swift */,
-				EF07FAC42045352E008088AC /* StnPhotoBrowserOptions.swift */,
-				EF07FAC52045352E008088AC /* StnToolbar.swift */,
-				EF07FAC62045352E008088AC /* StnZoomingScrollView.swift */,
+				EF07FADB204539C8008088AC /* extensions */,
+				EF07FAB42045352E008088AC /* KayAnimator.swift */,
+				EF07FAB52045352E008088AC /* KayButtons.swift */,
+				EF07FAB62045352E008088AC /* KayCache.swift */,
+				EF07FAB72045352E008088AC /* KayCacheable.swift */,
+				EF07FAB82045352E008088AC /* KayCaptionView.swift */,
+				EF07FAB92045352E008088AC /* KayDetectingImageView.swift */,
+				EF07FABA2045352E008088AC /* KayDetectingView.swift */,
+				EF07FABB2045352E008088AC /* KayIndicatorView.swift */,
+				EF07FABC2045352E008088AC /* KayLocalPhoto.swift */,
+				EF07FABD2045352E008088AC /* KayMesurement.swift */,
+				EF07FABE2045352E008088AC /* KayPagingScrollView.swift */,
+				EF07FABF2045352E008088AC /* KayPhoto.swift */,
+				EF07FAC02045352E008088AC /* KayPhotoBrowser.bundle */,
+				EF07FAC12045352E008088AC /* KayPhotoBrowser.h */,
+				EF07FAC22045352E008088AC /* KayPhotoBrowser.swift */,
+				EF07FAC32045352E008088AC /* KayPhotoBrowserDelegate.swift */,
+				EF07FAC42045352E008088AC /* KayPhotoBrowserOptions.swift */,
+				EF07FAC52045352E008088AC /* KayToolbar.swift */,
+				EF07FAC62045352E008088AC /* KayZoomingScrollView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -215,6 +220,16 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		EF07FADB204539C8008088AC /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF07FAEA20453BEF008088AC /* UIView+Radius 12-34-05-512.swift */,
+				EF07FAEC20453BFB008088AC /* UIImage+Rotation 12-34-05-543.swift */,
+			);
+			name = extensions;
+			path = ../../../StnPhotoBrowser/StnPhotoBrowser/Classes/extensions;
+			sourceTree = "<group>";
+		};
 		F73773DC0723A2BA0B6A4D15FB0B2392 /* Pods-KayPhotoBrowser_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +255,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF07FAD32045352E008088AC /* StnPhotoBrowser.h in Headers */,
+				EF07FAD32045352E008088AC /* KayPhotoBrowser.h in Headers */,
 				6791F3E4C1D9F83D52F612AC2CC1788B /* KayPhotoBrowser-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,24 +346,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF07FAD02045352E008088AC /* StnMesurement.swift in Sources */,
-				EF07FACC2045352E008088AC /* StnDetectingImageView.swift in Sources */,
+				EF07FAED20453BFB008088AC /* UIImage+Rotation 12-34-05-543.swift in Sources */,
+				EF07FAD02045352E008088AC /* KayMesurement.swift in Sources */,
+				EF07FACC2045352E008088AC /* KayDetectingImageView.swift in Sources */,
 				CE8925A6D4DD6EF7F9FD741D84365D31 /* KayPhotoBrowser-dummy.m in Sources */,
-				EF07FACD2045352E008088AC /* StnDetectingView.swift in Sources */,
-				EF07FAD42045352E008088AC /* StnPhotoBrowser.swift in Sources */,
-				EF07FAD72045352E008088AC /* StnToolbar.swift in Sources */,
-				EF07FAC92045352E008088AC /* StnCache.swift in Sources */,
-				EF07FAD62045352E008088AC /* StnPhotoBrowserOptions.swift in Sources */,
-				EF07FAD82045352E008088AC /* StnZoomingScrollView.swift in Sources */,
-				EF07FAD52045352E008088AC /* StnPhotoBrowserDelegate.swift in Sources */,
-				EF07FACA2045352E008088AC /* StnCacheable.swift in Sources */,
-				EF07FACB2045352E008088AC /* StnCaptionView.swift in Sources */,
-				EF07FAC72045352E008088AC /* StnAnimator.swift in Sources */,
-				EF07FACE2045352E008088AC /* StnIndicatorView.swift in Sources */,
-				EF07FAD22045352E008088AC /* StnPhoto.swift in Sources */,
-				EF07FACF2045352E008088AC /* StnLocalPhoto.swift in Sources */,
-				EF07FAC82045352E008088AC /* StnButtons.swift in Sources */,
-				EF07FAD12045352E008088AC /* StnPagingScrollView.swift in Sources */,
+				EF07FACD2045352E008088AC /* KayDetectingView.swift in Sources */,
+				EF07FAD42045352E008088AC /* KayPhotoBrowser.swift in Sources */,
+				EF07FAD72045352E008088AC /* KayToolbar.swift in Sources */,
+				EF07FAEB20453BEF008088AC /* UIView+Radius 12-34-05-512.swift in Sources */,
+				EF07FAC92045352E008088AC /* KayCache.swift in Sources */,
+				EF07FAD62045352E008088AC /* KayPhotoBrowserOptions.swift in Sources */,
+				EF07FAD82045352E008088AC /* KayZoomingScrollView.swift in Sources */,
+				EF07FAD52045352E008088AC /* KayPhotoBrowserDelegate.swift in Sources */,
+				EF07FACA2045352E008088AC /* KayCacheable.swift in Sources */,
+				EF07FACB2045352E008088AC /* KayCaptionView.swift in Sources */,
+				EF07FAC72045352E008088AC /* KayAnimator.swift in Sources */,
+				EF07FACE2045352E008088AC /* KayIndicatorView.swift in Sources */,
+				EF07FAD22045352E008088AC /* KayPhoto.swift in Sources */,
+				EF07FACF2045352E008088AC /* KayLocalPhoto.swift in Sources */,
+				EF07FAC82045352E008088AC /* KayButtons.swift in Sources */,
+				EF07FAD12045352E008088AC /* KayPagingScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

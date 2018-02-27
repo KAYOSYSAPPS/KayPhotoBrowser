@@ -1,0 +1,6 @@
+use_frameworks!
+target 'KayPhotoBrowser_Tests' do
+  pod 'KayPhotoBrowser', :path => '../'
+  
+  
+end

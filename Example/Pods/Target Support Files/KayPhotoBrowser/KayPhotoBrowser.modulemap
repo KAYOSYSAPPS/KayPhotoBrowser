@@ -1,0 +1,6 @@
+framework module KayPhotoBrowser {
+  umbrella header "KayPhotoBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

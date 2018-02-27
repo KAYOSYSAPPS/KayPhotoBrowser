@@ -1,0 +1,16 @@
+PODS:
+  - KayPhotoBrowser (0.1.0)
+
+DEPENDENCIES:
+  - KayPhotoBrowser (from `../`)
+
+EXTERNAL SOURCES:
+  KayPhotoBrowser:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KayPhotoBrowser: afa63b04840e9446137d158d9a710e7ed0b9c85b
+
+PODFILE CHECKSUM: d75b330678010e9bb5856106b80c8b632e614ee2
+
+COCOAPODS: 1.2.1
